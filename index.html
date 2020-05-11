@@ -32,6 +32,53 @@
         padding: 50px;
         background-color: #587eff;
         color: white;
+        max-height: 520px;
+        -webkit-transition: height 0.3s ease-in-out;
+        -moz-transition: height 0.3s ease-in-out;
+        -o-transition: height 0.3s ease-in-out;
+        -ms-transition: height 0.3s ease-in-out;
+        transition: height 0.3s ease-in-out;
+      }
+      .card-title.sticky + section {
+        margin-top: 200px;
+      }
+      .card-title.sticky .social-links {
+        display: none;
+      }
+      .card-title.sticky {
+        height: 100px;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        padding-top: 5px;
+        border-radius: 0;
+      }
+      .card-title.sticky .photo {
+        max-width: 110px;
+        border-radius: 50%;
+      }
+      .card-title.sticky .photo img {
+        border-radius: 50%;
+      }
+      .card-title.sticky .title-block h1, .card-title.sticky .title-block h2 {
+        font-size: 30px;
+      }
+      .card-title.sticky .title-block {
+        display: inline;
+      }
+      .card-title.sticky .title-block {
+        float: left;
+      }
+      .card-title.sticky .title-block.job-title {
+        float: right;
+      }
+       
+      .photo img {
+        -webkit-transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        -ms-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
       }
       .photo {
         max-width: 280px;
@@ -77,6 +124,11 @@
       .title-block h1 {
         text-align: center;
         font-size: 54px;
+        font-weight: 700;
+        margin: 30px 0 0;
+      }
+      .title-block h2 {
+        text-align: center;
         font-weight: 700;
         margin: 30px 0 0;
       }
@@ -240,10 +292,25 @@
         border-left: 1px solid #e0e0e0;
       }
     </style>
+    <script>
+      window.onscroll = function () {
+        scrollFunction();
+      };
+      function scrollFunction() {
+        if (
+          document.body.scrollTop > 200 ||
+          document.documentElement.scrollTop > 200
+        ) {
+          document.getElementById("header").className = "card-title sticky";
+        } else {
+          document.getElementById("header").className = "card-title";
+        }
+      }
+    </script>
   </head>
   <body>
     <div id="card" class="card">
-      <div class="card-title">
+      <div class="card-title" id="header">
         <div class="row">
           <div class="col-sm-4 col-md-4 col-lg-4">
             <div class="photo">
@@ -260,6 +327,7 @@
               <a href="www.google.com"><i class="fa fa-github"></i></a>
               <a href="www.google.com"><i class="fa fa-stack-overflow"></i></a>
             </div>
+            <div class="title-block job-title"><h2>React / Symfony</h1></div>
           </div>
         </div>
       </div>

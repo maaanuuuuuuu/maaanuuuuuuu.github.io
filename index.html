@@ -40,7 +40,7 @@
         transition: height 0.3s ease-in-out;
       }
       .card-title.sticky + section {
-        margin-top: 200px;
+        margin-top: 180px;
       }
       .card-title.sticky .social-links {
         display: none;
@@ -252,7 +252,6 @@
         border: 2px solid #587eff;
         z-index: 2;
       }
-
       .profile-item:after {
         content: "";
         display: inline-block;
@@ -264,6 +263,36 @@
         top: 25px;
         left: -29px;
         z-index: 1;
+      }
+      .sub-item-description::before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        background-color: #fff;
+        border-radius: 10px;
+        width: 12px;
+        height: 12px;
+        top: 6px;
+        left: -27px;
+        border: 2px solid #587eff;
+        z-index: 2;
+        transform: scale(0.5);
+      }
+      .sub-item-description {
+        position: relative;
+      }
+      .sub-item-description::after  {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        background-color: #587eff;
+        border-radius: 10px;
+        width: 20px;
+        height: 2px;
+        top: 11px;
+        left: -27px;
+        z-index: 1;
+        transform: scale(0.5);
       }
 
       .profile-item .item-title {
@@ -291,6 +320,14 @@
         padding-left: 8px;
         border-left: 1px solid #e0e0e0;
       }
+      .level {
+        color: #587eff;
+        font-size: 18px;
+        float:right;
+      }
+      .level .fa-heart{
+        color: #5A6268;
+      }
     </style>
     <script>
       window.onscroll = function () {
@@ -298,8 +335,8 @@
       };
       function scrollFunction() {
         if (
-          document.body.scrollTop > 200 ||
-          document.documentElement.scrollTop > 200
+          document.body.scrollTop > 180 ||
+          document.documentElement.scrollTop > 180
         ) {
           document.getElementById("header").className = "card-title sticky";
         } else {
@@ -363,6 +400,10 @@
                 <i class="fa fa-phone"></i
                 ><a href="tel:+33683624097">+33 6 83 62 40 97</a>
               </li>
+              <li>
+                <i class="fa fa-link"></i
+                ><a href="https://maaanuuuuuuu.github.io/">maaanuuuuuuu.github.io</a>
+              </li>
             </ul>
           </div>
         </div>
@@ -386,7 +427,7 @@
                     </h4>
                     <span class="item-period">2007-2011</span>
                     <span class="item-small"
-                      >Cergy-Pontoise, Val-d'Oise and Pau,
+                      >Cergy, Val-d'Oise and Pau,
                       Pyrénées-Atlantiques</span
                     >
                     <p class="item-description">
@@ -414,6 +455,60 @@
                   </div>
                 </div>
               </div>
+              <div class="block">
+                <div class="block-title">
+                  <h3>Skills and <span>Languages</span></h3>
+                </div>
+                <div class="profile">
+                  <div class="profile-item">English<span class="level"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i></span>
+                  <p class="item-description">I use english on a day-to-day basis at work. My TOEIC Score is 990/990 (Test of English for International Communication)</p>
+                  </div>
+                  <div class="profile-item">French<span class="level"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
+                  <p class="item-description">It is my mother tongue</p>
+                  </div>
+                  <div class="profile-item">German<span class="level"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i></span>
+                  <p class="item-description">I lived 6 years in Bremen and Hamburg and schooled in a german highschool. I still have friends and family living there.</p>
+                  </div>
+                  <div class="profile-item">UX Design<span class="level"><i class="fa fa-heart"></i></span>
+                  </div>
+                  <div class="profile-item">ReactJS<span class="level"><i class="fa fa-heart"></i></span>
+                  <span class="item-period">since 2019</span>
+                  </div>
+                  <div class="profile-item">Symfony<span class="level"><i class="fa fa-heart"></i></span>
+                    <span class="item-period">since 2009</span>
+                  </div>
+                  <div class="profile-item">Material UI<span class="level"></span>
+                  <span class="item-period">since 2017</span>
+                  </div>
+                  <div class="profile-item">API Platform<span class="level"></span>
+                  <span class="item-period">since 2019</span>
+                  </div>
+                  <div class="profile-item">VueJS<span class="level"></span>
+                    <span class="item-period">2018 - 2019</span>
+                  </div>
+                  <div class="profile-item">Bootstrap<span class="level"></span>
+                    <span class="item-period">2013 - 2017</span>
+                  </div>
+                  <div class="profile-item">SQL<span class="level"></span>
+                  <span class="item-period">since 2005</span>
+                  </div>
+                  <div class="profile-item">MongoDB<span class="level"></span>
+                    <span class="item-period">since 2016</span>
+                  </div>
+                  <div class="profile-item">Git<span class="level"></span>
+                    <span class="item-period">since 2013</span>
+                  </div>
+                  <div class="profile-item">JQuery<span class="level"></span>
+                    <span class="item-period">2006 - 2017</span>
+                  </div>
+                  <div class="profile-item">Docker<span class="level"></span>
+                    <span class="item-period">since 2016</span>
+                  </div>
+                  <div class="profile-item">Apache<span class="level"></span>
+                    <span class="item-period">since 2007</span>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="col-sm-6 col-md-6 col-lg-6">
               <div class="block">
@@ -422,46 +517,76 @@
                 </div>
                 <div class="profile">
                   <div class="profile-item">
-                    <h4 class="item-title">Software Architect</h4>
-                    <span class="item-period">Since 2016</span>
-                    <span class="item-small"
-                      >Enablon, a Wolters Kluwer Business</span
+                    <h4 class="item-title">Front-end Architect</h4>
+                    <span class="item-period">Since 2018</span>
+                    <span class="item-small">Enablon, a Wolters Kluwer Business</span
                     >
                     <p class="item-description">
                       Co-creator and Front-end lead developer of Enablon Pulse,
                       the first AI based product of Enablon, used to predict
                       incidents on production sites.
                     </p>
-                    <p class="item-description">
-                      Developer, deployer and maintainer of Enablon One, the
-                      Portal for accessing Enablon’s Saas Services and client’s
-                      usage analytics.
-                    </p>
                   </div>
                   <div class="profile-item">
-                    <h4 class="item-title">Software Developer at Wizness</h4>
-                    <span class="item-period">2012 - 2016</span>
-                    <span class="item-small">Enablon affiliate company</span>
-                    <p class="item-description">
-                      Developer, deployer and maintainer of Enablon Publisher: A
+                    <h4 class="item-title">Fullstack Web Developer</h4>
+                    <span class="item-period">2015 - 2018</span>
+                    <span class="item-small">Enablon</span>
+                      <p class="sub-item-description">
+                        Developer, deployer and maintainer of Enablon One, the
+                        Portal for accessing Enablon’s Saas Services and client’s
+                        usage analytics.
+                      </p>
+                      <p class="sub-item-description">Miscellaneous projects.</p>
+                  </div>
+                  <div class="profile-item">
+                    <h4 class="item-title">Fullstack Web Developer</h4>
+                    <span class="item-period">2013 - 2015</span>
+                    <span class="item-small">Wizness, an Enablon affiliate company</span>
+                    <p class="sub-item-description">
+                      Developer, deployer and maintainer of Enablon Publisher, a
                       Content Management System allowing users to build
                       responsive web based Environment Health and Safety reports
                       using data from multiple sources.
                     </p>
-                    <p class="item-description">
-                      Developer, deployer and maintainer of Enablon Academy: An
+                    <p class="sub-item-description">
+                      Developer, deployer and maintainer of Enablon Academy, a
                       E-Learning platform used for Enablon’s partner
                       certification.
                     </p>
-                    <p class="item-description">Miscellaneous projects.</p>
                   </div>
                   <div class="profile-item">
-                    <h4 class="item-title">Graphic Designer</h4>
-                    <span class="item-period">Jan 2010 - Dec 2011</span>
-                    <span class="item-small">Apple Inc.</span>
+                    <h4 class="item-title">Software Engineer</h4>
+                    <span class="item-period">2011 - 2013</span>
+                    <span class="item-small">Enablon</span>
+                    <p class="sub-item-description">
+                      Developer on Wizness, a social network for EHS professionals to share practices and news.
+                    </p>
+                    <p class="sub-item-description">
+                      Developer on GXP, a supply-chain virtualization software to generate full organization wide reports.
+                    </p>
+                  </div>
+                  <div class="profile-item">
+                    <h4 class="item-title">Internship as a Web Developer</h4>
+                    <span class="item-period">2009</span>
+                    <span class="item-small">Arianespace</span>
                     <p class="item-description">
-                      Mauris magna sapien, pharetra consectetur fringilla vitae,
-                      interdum sed tortor.
+                      Developer of an intranet web site to manage fuel stocks on the Kourou European spaceport.
+                    </p>
+                  </div>
+                  <div class="profile-item">
+                    <h4 class="item-title">Internship as a Web Developer</h4>
+                    <span class="item-period">2007 and 2008</span>
+                    <span class="item-small">PCB Electronics and CFAM Electronics</span>
+                    <p class="item-description">
+                      Developer of the small businesses' ecommercewebsites for selling electronical equipments.
+                    </p>
+                  </div>
+                  <div class="profile-item">
+                    <h4 class="item-title">Internship as a Network Technician</h4>
+                    <span class="item-period">2006</span>
+                    <span class="item-small">EADS</span>
+                    <p class="item-description">
+                      Maintaining and fixing various network and computer issues in the center of competence for space transportation in Bremen, Germany.
                     </p>
                   </div>
                 </div>

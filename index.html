@@ -15,9 +15,6 @@
     />
 
     <style>
-      html {
-        scroll-snap-type: y proximity;
-      }
       body {
         background-color: #f5f5f5;
         font-family: "Montserrat", Helvetica, sans-serif;
@@ -177,14 +174,6 @@
       section {
         padding: 15px 50px 15px;
         position: relative;
-      }
-      .home {
-        scroll-snap-align: start;
-      }
-      .snap {
-        position: absolute;
-        scroll-snap-align: start;
-        top: -100px;
       }
       a {
         color: #587eff;
@@ -353,6 +342,8 @@
       }
       
       .item-tags {
+        opacity: 1;
+        max-height: 400px;
          -webkit-transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
         -moz-transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
         -o-transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
@@ -370,10 +361,6 @@
         transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
         overflow: hidden;
         font-size: 14px;
-      }
-      .item-tags {
-        opacity: 1;
-        max-height: 400px;
       }
       .extended .more {
         opacity: 1;
@@ -418,8 +405,8 @@
       };
       function scrollFunction() {
         if (
-          document.body.scrollTop > 260 ||
-          document.documentElement.scrollTop > 260
+          document.body.scrollTop > 220 ||
+          document.documentElement.scrollTop > 220
         ) {
           document.getElementById("header").className = "card-title sticky";
         } else {
@@ -429,7 +416,6 @@
       function readMore(element, event) {
         // var itemElement = 
         var itemElement = element.parentNode;
-        console.log(element);
         if (!itemElement.className.includes("extended")) {
           itemElement.className = itemElement.className + " extended";
         } else {
@@ -452,10 +438,9 @@
               <h1>Emmanuel Désir</h1>
             </div>
             <div class="social-links">
-              <a href="www.google.com"><i class="fa fa-quora"></i></a>
-              <a href="www.google.com"><i class="fa fa-linkedin"></i></a>
-              <a href="www.google.com"><i class="fa fa-github"></i></a>
-              <a href="www.google.com"><i class="fa fa-stack-overflow"></i></a>
+              <a href="https://www.linkedin.com/in/emmanuel-desir-86b465141/"><i class="fa fa-linkedin"></i></a>
+              <a href="https://github.com/maaanuuuuuuu"><i class="fa fa-github"></i></a>
+              <a href="https://stackoverflow.com/users/1514946/manu"><i class="fa fa-stack-overflow"></i></a>
             </div>
             <div class="title-block job-title"><h2>React / Symfony</h1></div>
           </div>
@@ -506,7 +491,6 @@
       </section>
       
       <section class="skills">
-        <div class="snap"></div>
         <div class="block-title">
           <h3>Skills and <span>Languages</span></h3>
         </div>
@@ -559,7 +543,6 @@
         </span>
       </section>
       <section class="resume">
-        <div class="snap"></div>
         <div class="page-content">
           <div class="row">
             <div class="col-sm-6 col-md-6 col-lg-6">
@@ -614,7 +597,7 @@
                     <span class="item-period">2007 and 2008</span>
                     <span class="item-small">PCB Electronics and CFAM Electronics</span>
                     <p class="item-description">
-                      Developer of the small businesses' ecommercewebsites for selling electronical equipments.
+                      Developer of these small businesses' e-commerce websites for selling electronical equipments.
                     </p>
                   </div>
                   <div class="profile-item">
@@ -641,7 +624,7 @@
                     <span class="item-small">Enablon, a Wolters Kluwer Business</span
                     >
                     <p class="item-description">
-                      Co-creator and Front-end lead developer of Enablon Pulse,
+                      Co-creator and Front-end lead developer of <b>Enablon Pulse</b>,
                       the first AI based product of Enablon, used to predict
                       incidents on production sites.
                     </p>
@@ -662,37 +645,91 @@
                     <span class="item-period">2015 - 2018</span>
                     <span class="item-small">Enablon</span>
                       <p class="sub-item-description">
-                        Developer, deployer and maintainer of Enablon One, the
+                        Developer, deployer and maintainer of <b>Enablon One</b>, the
                         Portal for accessing Enablon’s Saas Services and client’s
                         usage analytics.
                       </p>
+                      <p class="item-tags">
+                        <span class="tag">#Symfony3</span>
+                        <span class="tag">#JQuery</span>
+                        <span class="tag">#MySQL</span>
+                        <span class="tag">#MongoDB</span>
+                        <span class="tag">#Gitlab-CI/CD</span>
+                        <span class="tag">#Docker</span>
+                      </p>
+                      <p class="item-description more">
+                        The Portal for accessing Enablon’s Saas Services and client’s usage analytics. It is built with <span class="tag">#Symfony3</span> and <span class="tag">#JQuery</span>,
+                        using <span class="tag">#MySQL</span>, <span class="tag">#MongoDB</span> and deployed using <span class="tag">#Gitlab-CI/CD</span> and <span class="tag">#Docker</span>.
+                      </p>
                       <p class="sub-item-description">Miscellaneous projects.</p>
+                      <p class="item-tags">
+                        <span class="tag">#VueJS</span>
+                        <span class="tag">#Symfony4</span>
+                        <span class="tag">#FOSRestBundle</span>
+                        <span class="tag">#ObjectiveC</span>
+                        <span class="tag">#Kotlin</span>
+                      </p>
+                      <p class="item-description more">
+                        Including a checklist creation engine developed with <span class="tag">#VueJS</span> and <span class="tag">#Symfony4</span> + <span class="tag">#FOSRestBundle</span> and displayed in Smartphone Apps
+                        using <span class="tag">#ObjectiveC</span> and <span class="tag">#Kotlin</span>.
+                      </p>
+                      <div class="item-footer read-more" onclick="readMore(this, event)"><span>read more</span></div>
                   </div>
                   <div class="profile-item">
                     <h4 class="item-title">Fullstack Web Developer</h4>
                     <span class="item-period">2013 - 2015</span>
                     <span class="item-small">Wizness, an Enablon affiliate company</span>
                     <p class="sub-item-description">
-                      Developer, deployer and maintainer of Enablon Publisher, a
+                      Developer, deployer and maintainer of <b>Enablon Publisher</b>, a
                       Content Management System allowing users to build
                       responsive web based Environment Health and Safety reports
                       using data from multiple sources.
                     </p>
+                    <p class="item-tags">
+                      <span class="tag">#Symfony2</span>
+                      <span class="tag">#JQuery</span>
+                      <span class="tag">#MySQL</span>
+                      <span class="tag">#MongoDB</span>
+                      <span class="tag">#Apache</span>
+                    </p>
+                    <p class="item-description more">
+                      A Content Management System allowing users to build responsive web based Environment Health and Safety reports using
+                      data from multiple sources. It is built with <span class="tag">#Symfony2</span> and <span class="tag">#JQuery</span>, using <span class="tag">#MySQL</span>, <span class="tag">#MongoDB</span> and deployed on an <span class="tag">#Apache</span> server.
+                    </p>
                     <p class="sub-item-description">
-                      Developer, deployer and maintainer of Enablon Academy, a
+                      Developer, deployer and maintainer of <b>Enablon Academy</b>, a
                       E-Learning platform used for Enablon’s partner
                       certification.
                     </p>
+                    <p class="item-tags">
+                      <span class="tag">#Symfony2</span>
+                      <span class="tag">#JQuery</span>
+                      <span class="tag">#MySQL</span>
+                      <span class="tag">#Apache</span>
+                    </p>
+                    <p class="item-description more">
+                      An E-Learning platform used for Enablon’s partner certification. It is built with <span class="tag">#Symfony2</span> and <span class="tag">#JQuery</span>, using <span class="tag">#MySQL</span> and
+                      deployed on an <span class="tag">#Apache</span> server.
+                    </p>
+                    <div class="item-footer read-more" onclick="readMore(this, event)"><span>read more</span></div>
                   </div>
                   <div class="profile-item">
                     <h4 class="item-title">Software Engineer</h4>
                     <span class="item-period">2011 - 2013</span>
                     <span class="item-small">Enablon</span>
                     <p class="sub-item-description">
-                      Developer on Wizness, a social network for EHS professionals to share practices and news.
+                      Developer on <b>Wizness</b>, a social network for EHS professionals to share practices and news.
                     </p>
+                    <p class="item-tags">
+                      <span class="tag">#JQuery</span>
+                      <span class="tag">#C#</span>
+                    </p>
+                    <p class="item-description more">
+                      I mainly developed interfaces using <span class="tag">#JQuery</span> and the backend using a company framework based on <span class="tag">#C#</span>.
+                    </p>
+                    <div class="item-footer read-more" onclick="readMore(this, event)"><span>read more</span></div>
                     <p class="sub-item-description">
-                      Developer on GXP, a supply-chain virtualization software to generate full organization wide reports.
+                      Developer on <b>Global eXchange Platform</b>, a supply-chain virtualization software to generate full organization wide reports.
                     </p>
                   </div>
                 </div>

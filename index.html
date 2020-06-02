@@ -25,6 +25,7 @@
         max-width: 1032px;
         margin: 0 auto;
         margin-top: 10px;
+        height: 337vh;
       }
 
       .card-title {
@@ -41,7 +42,6 @@
       }
       .card-title.sticky + section {
         margin-top: 260px;
-        padding-top: 120px;
       }
       .card-title.sticky .social-links {
         display: none;
@@ -72,6 +72,31 @@
       }
       .card-title.sticky .title-block.job-title {
         float: right;
+      }
+      .skills.sticky {
+        min-height: 170px;
+        position: sticky;
+        top: 110px;
+        z-index: 100;
+        overflow: hidden;
+      }
+      .skills.sticky + section {
+        margin-top: 10px;
+      }
+      .card-title.absolute {
+        top: 542px;
+      }
+      .skills.absolute {
+        top: 640px;
+        height: 170px;
+      }
+      .skills.absolute + .resume {
+        position: absolute;
+        top: 850px;
+      }
+      .absolute {
+        position: absolute!important;
+        width: 100%;
       }
        
       .photo img {
@@ -232,6 +257,13 @@
         border-left: 2px solid #587eff;
         box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.2);
       }
+      .profile-item .fa-graduation-cap, .profile-item .fa-laptop {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 18px;
+        color: #587eff;
+      }
 
       .profile-item:hover {
         box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
@@ -340,15 +372,11 @@
       .profile-item .item-footer > span:hover {
         text-decoration: underline;
       }
-      
-      .item-tags {
-        opacity: 1;
-        max-height: 400px;
-         -webkit-transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
-        -moz-transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
-        -o-transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
-        -ms-transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
-        transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+      .read-more {
+        padding-bottom: 15px;
+      }
+      .read-more:last-child {
+        padding-bottom: 0;
       }
       .more {
         margin: 0;
@@ -362,18 +390,11 @@
         overflow: hidden;
         font-size: 14px;
       }
-      .extended .more {
+      .extended.more {
         opacity: 1;
-        margin: 0 0 10px;
         max-height: 400px;
         display: block;
       }
-      .extended .item-tags {
-        opacity: 0;
-        max-height: 0;
-        display: none;
-      }
-
       .skill-item {
         float:left;
         width: 20%;
@@ -405,21 +426,41 @@
       };
       function scrollFunction() {
         if (
-          document.body.scrollTop > 220 ||
-          document.documentElement.scrollTop > 220
+          document.body.scrollTop > 260 ||
+          document.documentElement.scrollTop > 260
         ) {
           document.getElementById("header").className = "card-title sticky";
+          // if (
+          //   document.body.scrollTop > 500 ||
+          //   document.documentElement.scrollTop > 500
+          // ) {
+          //   document.getElementById("skills").className = "skills sticky";
+          //   // if (
+          //   //   document.body.scrollTop > 580 ||
+          //   //   document.documentElement.scrollTop > 580
+          //   // ) {
+          //   //   document.getElementById("skills").className = "skills sticky absolute";
+          //   //   document.getElementById("header").className = "card-title sticky absolute";
+          //   // } else {
+          //   //   document.getElementById("skills").className = "skills sticky";
+          //   //   document.getElementById("header").className = "card-title sticky";
+          //   // }
+          // } else {
+          //   document.getElementById("skills").className = "skills";
+          // }
         } else {
           document.getElementById("header").className = "card-title";
         }
       }
       function readMore(element, event) {
         // var itemElement = 
-        var itemElement = element.parentNode;
+        var itemElement = element.previousElementSibling;
         if (!itemElement.className.includes("extended")) {
           itemElement.className = itemElement.className + " extended";
+          element.children[0].textContent = "read less";
         } else {
           itemElement.className = itemElement.className.replace(" extended", "");
+          element.children[0].textContent = "read more";
         }
       }
     </script>
@@ -490,7 +531,7 @@
         </div>
       </section>
       
-      <section class="skills">
+      <section class="skills" id="skills">
         <div class="block-title">
           <h3>Skills and <span>Languages</span></h3>
         </div>
@@ -552,6 +593,7 @@
                 </div>
                 <div class="profile">
                   <div class="profile-item">
+                    <i class="fa fa-graduation-cap"></i>
                     <h4 class="item-title">
                       EISTI- International School of Computer Science and
                       Mathematics Engineering
@@ -583,6 +625,15 @@
                     <span class="item-period">2004</span>
                     <span class="item-small">Hamburg, Germany</span>
                     <p class="item-description">French High School Diploma.</p>
+                  </div>
+                  <div class="profile-item">
+                    <h4 class="item-title">Internship as a Sofware Engineer</h4>
+                    <span class="item-period">2011</span>
+                    <span class="item-small">Enablon</span>
+                    <p class="sub-item-description">
+                      Developer on <b>Global eXchange Platform</b>, a supply-chain virtualization software to generate full organization
+                      wide reports.
+                    </p>
                   </div>
                   <div class="profile-item">
                     <h4 class="item-title">Internship as a Web Developer</h4>
@@ -619,6 +670,7 @@
                 </div>
                 <div class="profile">
                   <div class="profile-item">
+                    <i class="fa fa-laptop"></i>
                     <h4 class="item-title">Front-end Architect</h4>
                     <span class="item-period">Since 2018</span>
                     <span class="item-small">Enablon, a Wolters Kluwer Business</span
@@ -661,6 +713,7 @@
                         The Portal for accessing Enablon’s Saas Services and client’s usage analytics. It is built with <span class="tag">#Symfony3</span> and <span class="tag">#JQuery</span>,
                         using <span class="tag">#MySQL</span>, <span class="tag">#MongoDB</span> and deployed using <span class="tag">#Gitlab-CI/CD</span> and <span class="tag">#Docker</span>.
                       </p>
+                      <div class="item-footer read-more" onclick="readMore(this, event)"><span>read more</span></div>
                       <p class="sub-item-description">Miscellaneous projects.</p>
                       <p class="item-tags">
                         <span class="tag">#VueJS</span>
@@ -696,6 +749,7 @@
                       A Content Management System allowing users to build responsive web based Environment Health and Safety reports using
                       data from multiple sources. It is built with <span class="tag">#Symfony2</span> and <span class="tag">#JQuery</span>, using <span class="tag">#MySQL</span>, <span class="tag">#MongoDB</span> and deployed on an <span class="tag">#Apache</span> server.
                     </p>
+                    <div class="item-footer read-more" onclick="readMore(this, event)"><span>read more</span></div>
                     <p class="sub-item-description">
                       Developer, deployer and maintainer of <b>Enablon Academy</b>, a
                       E-Learning platform used for Enablon’s partner
@@ -728,9 +782,7 @@
                       I mainly developed interfaces using <span class="tag">#JQuery</span> and the backend using a company framework based on <span class="tag">#C#</span>.
                     </p>
                     <div class="item-footer read-more" onclick="readMore(this, event)"><span>read more</span></div>
-                    <p class="sub-item-description">
-                      Developer on <b>Global eXchange Platform</b>, a supply-chain virtualization software to generate full organization wide reports.
-                    </p>
+                    
                   </div>
                 </div>
               </div>

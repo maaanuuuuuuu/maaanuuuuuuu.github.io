@@ -25,7 +25,7 @@
         max-width: 1032px;
         margin: 0 auto;
         margin-top: 10px;
-        height: 337vh;
+        height: 100%;
       }
 
       .card-title {
@@ -41,7 +41,7 @@
         transition: height 0.3s ease-in-out;
       }
       .card-title.sticky + section {
-        margin-top: 260px;
+        margin-top: 235px;
       }
       .card-title.sticky .social-links {
         display: none;
@@ -53,6 +53,20 @@
         z-index: 1000;
         padding-top: 5px;
         border-radius: 0;
+      }
+      .QRCode {
+        opacity: 0;
+        position: absolute;
+        width: 90px;
+        left: 130px;
+        -webkit-transition: opacity 0.5s ease-in-out;
+        -moz-transition: opacity 0.5s ease-in-out;
+        -o-transition: opacity 0.5s ease-in-out;
+        -ms-transition: opacity 0.5s ease-in-out;
+        transition: opacity 0.5s ease-in-out;
+      }
+      .card-title.sticky .QRCode {
+        opacity: 1;
       }
       .card-title.sticky .photo {
         max-width: 110px;
@@ -221,7 +235,6 @@
       }
       .contact-list {
         list-style: none;
-        padding-top: 10px;
       }
       .contact-list i {
         font-size: 20px;
@@ -397,7 +410,7 @@
       }
       .skill-item {
         float:left;
-        width: 20%;
+        width: 22.85%;
         font-size: 12px;
         position: relative;
         padding: 10px 20px 10px;
@@ -426,8 +439,8 @@
       };
       function scrollFunction() {
         if (
-          document.body.scrollTop > 260 ||
-          document.documentElement.scrollTop > 260
+          document.body.scrollTop > 235 ||
+          document.documentElement.scrollTop > 235
         ) {
           document.getElementById("header").className = "card-title sticky";
           // if (
@@ -470,6 +483,9 @@
       <div class="card-title" id="header">
         <div class="row">
           <div class="col-sm-4 col-md-4 col-lg-4">
+            <div class="QRCode">
+              <img src="./QR.png" alt="" />
+            </div>
             <div class="photo">
               <img src="./photo.png" alt="" />
             </div>
@@ -494,13 +510,14 @@
               <div class="block-title">
                 <h3>About <span>Me</span></h3>
               </div>
-              <p>
+              <p style="padding-left: 15px ;">
                 Hello! I’m Emmanuel Désir, a sympathic Fullstack Web Developer,
                 in love with ReactJS and Symfony.
               </p>
             </div>
           </div>
-          <div class="col-sm-6 col-md-6 col-lg-6">
+          <div class="col-sm-1 col-md-1 col-lg-1"></div>
+          <div class="col-sm-5 col-md-5 col-lg-5">
             <ul class="contact-list">
               <li>
                 <i class="fa fa-map-marker"></i
@@ -527,7 +544,7 @@
           </div>
         </div>
         <div class="download-resume">
-          <a href="www.google.com" class="btn btn-secondary">Download Resume</a>
+          <a href="./resume.pdf" class="btn btn-secondary">Download Resume</a>
         </div>
       </section>
       

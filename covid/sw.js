@@ -80,6 +80,14 @@ self.__precacheManifest = [
     "revision": "623cac53a40c141642b22bf50fe14628"
   },
   {
+    "url": "confidentialite.16e52d05.js",
+    "revision": "b5190aa17ba08851e7db480ffeee6f83"
+  },
+  {
+    "url": "confidentialite.2f7d4198.css",
+    "revision": "ca3a47f6d4afd24fc8931f6d8a669329"
+  },
+  {
     "url": "confidentialite.3d731a5c.css",
     "revision": "b200a9bba5ea3eb28301401c7cd08077"
   },
@@ -97,7 +105,7 @@ self.__precacheManifest = [
   },
   {
     "url": "confidentialite.html",
-    "revision": "efe52f229d67d9eca3efd78a8cd2c72a"
+    "revision": "ea1e12fed3c610f4ef774a9c985dd69f"
   },
   {
     "url": "favicon-16x16.a0a61c08.png",
@@ -117,7 +125,7 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "af040f0a56513260d413204777d4687c"
+    "revision": "f9cab52631b75e79d9f02b508334dcbf"
   },
   {
     "url": "logo_dnum_dark.0fe33c5b.svg",
@@ -136,12 +144,20 @@ self.__precacheManifest = [
     "revision": "3a41bfa41e4671414da29db168c37d66"
   },
   {
+    "url": "main.2f7d4198.css",
+    "revision": "0e8b6de62e28361305b4645d9d9b060e"
+  },
+  {
     "url": "main.3d731a5c.css",
     "revision": "0865caeb5c2a428a429c2677dafe2322"
   },
   {
     "url": "main.4a3e08d6.js",
     "revision": "9b07df9fc3498feda8210061a497e526"
+  },
+  {
+    "url": "main.ef172c7a.js",
+    "revision": "ae98dfa4bfce25ca6b7df0bb39e6b5b8"
   },
   {
     "url": "main.fb6bbcaf.css",
@@ -205,9 +221,9 @@ self.__precacheManifest = [
   },
   {
     "url": "./",
-    "revision": "3f3af652895d0985308c2660045f8774"
+    "revision": "068dafa418da718c8bea7be4df274886"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute(workbox.precaching.getCacheKeyForURL("/index.html"));
+workbox.routing.registerNavigationRoute(workbox.precaching.getCacheKeyForURL("/covid/index.html"));
